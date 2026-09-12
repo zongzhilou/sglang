@@ -84,6 +84,7 @@ from sglang.srt.configs import (
     Qwen3NextConfig,
     Qwen4ExpConfig,
     Qwen4ExpTextConfig,
+    ShensiConfig,
     Spark2_5Config,
     Step3p5Config,
     Step3p7Config,
@@ -175,6 +176,7 @@ _CONFIG_REGISTRY: Dict[str, Type[PretrainedConfig]] = {
         InklingMMConfig,
         MiniMaxM3VLConfig,
         XllmConfig,
+        ShensiConfig,
     ]
 }
 
