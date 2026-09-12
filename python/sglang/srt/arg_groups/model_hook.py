@@ -169,6 +169,7 @@ def handle_model_specific_adjustments(server_args: Any):
 
     if model_arch in [
         "DeepseekV4ForCausalLM",
+        "ShensiForCausalLM",
     ]:
         from sglang.srt.arg_groups.deepseek_v4_hook import (
             apply_deepseek_v4_defaults,
@@ -371,6 +372,7 @@ def handle_model_specific_adjustments(server_args: Any):
 
     elif model_arch in [
         "DeepseekV4ForCausalLM",
+        "ShensiForCausalLM",
     ]:
         from sglang.srt.arg_groups.deepseek_v4_hook import (
             validate_deepseek_v4_cp,

@@ -952,7 +952,7 @@ def _deepseek_v4_kv_cache_dtype(view: Any) -> dict:
     result. The NPU split-backend writes stay in the hook."""
     hf_config = model_config_of(view).hf_config
     model_arch = hf_config.architectures[0]
-    if model_arch != "DeepseekV4ForCausalLM":
+    if model_arch not in ("DeepseekV4ForCausalLM", "ShensiForCausalLM"):
         return {}
 
     kv_cache_dtype = view.kv_cache_dtype
@@ -988,6 +988,7 @@ _FLASHINFER_ALLREDUCE_FUSION_ARCHS = frozenset(
         "DeepseekV3ForCausalLM",
         "DeepseekV32ForCausalLM",
         "DeepseekV4ForCausalLM",
+        "ShensiForCausalLM",
         "GptOssForCausalLM",
         "GlmMoeDsaForCausalLM",
         "Glm4MoeForCausalLM",

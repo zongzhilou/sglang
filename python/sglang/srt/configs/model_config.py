@@ -218,6 +218,7 @@ def is_deepseek_v4(config) -> bool:
         "DeepseekV4ForCausalLM",
         "DeepseekV4ForCausalLMNextN",
         "DeepseekV4ForCausalLMDSpark",
+        "ShensiForCausalLM",
     )
 
 
@@ -949,6 +950,7 @@ class ModelConfig:
                     "DeepseekV4ForCausalLM",
                     "DeepseekV4ForCausalLMNextN",
                     "DeepseekV4ForCausalLMDSpark",
+                    "ShensiForCausalLM",
                 ]
                 for arch in self.hf_config.architectures
             )
@@ -1120,6 +1122,7 @@ class ModelConfig:
             "DeepseekV4ForCausalLM" in self.hf_config.architectures
             or "DeepseekV4ForCausalLMNextN" in self.hf_config.architectures
             or "DeepseekV4ForCausalLMDSpark" in self.hf_config.architectures
+            or "ShensiForCausalLM" in self.hf_config.architectures
         ):
             self.qk_rope_head_dim = self.hf_config.qk_rope_head_dim
             self.qk_nope_head_dim = self.hf_config.head_dim - self.qk_rope_head_dim
@@ -2312,6 +2315,7 @@ def is_hybrid_swa_model(
         "DeepseekV4ForCausalLM",
         "DeepseekV4ForCausalLMNextN",
         "DeepseekV4ForCausalLMDSpark",
+        "ShensiForCausalLM",
         *SWA_SINK_ARCHS,
         *MIMO_V2_MODEL_ARCHS,
         "MiMoV2MTP",

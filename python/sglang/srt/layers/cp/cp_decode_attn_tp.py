@@ -31,6 +31,7 @@ CP_DECODE_ATTN_TP_SUPPORTED_ARCHS: Tuple[str, ...] = (
     "DeepseekV4ForCausalLM",
     "DeepseekV4ForCausalLMNextN",
     "DeepseekV4ForCausalLMDSpark",
+    "ShensiForCausalLM",
     # GLM-5.x (inherits DeepseekV2 attention; DSA path)
     "GlmMoeDsaForCausalLM",
     "GlmMoeDsaForCausalLMNextN",
